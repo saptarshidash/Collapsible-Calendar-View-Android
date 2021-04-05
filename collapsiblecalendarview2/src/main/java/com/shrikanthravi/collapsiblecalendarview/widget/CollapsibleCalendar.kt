@@ -298,10 +298,8 @@ class CollapsibleCalendar : UICalendar, View.OnClickListener {
                     mTableBody.addView(rowCurrent)
                 }
                 val view = mAdapter.getView(i)
-                view.layoutParams = TableRow.LayoutParams(
-                        0,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        1f)
+                view.layoutParams = TableRow.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 
+                                    ViewGroup.LayoutParams.MATCH_PARENT)
                 params.let { params ->
                     if (params != null && (mAdapter.getItem(i).diff < params.prevDays || mAdapter.getItem(i).diff > params.nextDaysBlocked)) {
                         view.isClickable = false

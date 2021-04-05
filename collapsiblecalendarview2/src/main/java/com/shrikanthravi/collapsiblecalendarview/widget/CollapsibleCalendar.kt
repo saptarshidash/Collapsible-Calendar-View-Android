@@ -280,8 +280,8 @@ class CollapsibleCalendar : UICalendar, View.OnClickListener {
                 val txtDayOfWeek = view.findViewById<View>(R.id.txt_day_of_week) as TextView
                 txtDayOfWeek.setText(DateFormatSymbols().getShortWeekdays()[(i + firstDayOfWeek) % 7 + 1])
                 view.layoutParams = TableRow.LayoutParams(
-                        0,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT,
                         1f)
                 rowCurrent.addView(view)
             }
@@ -294,7 +294,7 @@ class CollapsibleCalendar : UICalendar, View.OnClickListener {
                     rowCurrent = TableRow(context)
                     rowCurrent.layoutParams = TableLayout.LayoutParams(
                             ViewGroup.LayoutParams.MATCH_PARENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT)
+                            ViewGroup.LayoutParams.MATCH_PARENT, 1f)
                     mTableBody.addView(rowCurrent)
                 }
                 val view = mAdapter.getView(i)
